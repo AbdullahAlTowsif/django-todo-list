@@ -20,6 +20,9 @@ class TodoListView(ListView):
     model = TodoListModel
     template_name = 'show_tasks.html'
     context_object_name = 'data'
+    
+    def get_queryset(self):
+        return TodoListModel.objects.filter(status=False)
 
 class DeleteTodoListView(DeleteView):
     model = TodoListModel
