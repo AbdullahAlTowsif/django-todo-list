@@ -13,4 +13,10 @@ class TodoFormView(CreateView):
     model = TodoListModel
     template_name = 'add_todo.html'
     form_class = TodoListForm
-    success_url = reverse_lazy('homepage')
+    success_url = reverse_lazy('show_tasks')
+
+
+class TodoListView(ListView):
+    model = TodoListModel
+    template_name = 'show_tasks.html'
+    context_object_name = 'data'
