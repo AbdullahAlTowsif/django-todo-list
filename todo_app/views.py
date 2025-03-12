@@ -25,3 +25,9 @@ class DeleteTodoListView(DeleteView):
     model = TodoListModel
     template_name = 'delete_confirmation.html'
     success_url = reverse_lazy('show_tasks')
+
+class TaskUpdateView(UpdateView):
+    model = TodoListModel
+    template_name = 'add_todo.html'
+    form_class = TodoListForm
+    success_url = reverse_lazy('show_tasks')
