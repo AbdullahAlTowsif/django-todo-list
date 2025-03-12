@@ -29,7 +29,7 @@
                         <span class="text-red-600 font-bold">Incomplete</span>
                     {% endif %}
                 </td>
-                <td><a class="btn btn-error text-xs text-white" href="{% url 'delete_task' pk=task.id %}">Delete</a> <a class="btn btn-info text-xs text-white" href="{% url 'update_task' pk=task.id %}">Edit</a> <a class="btn btn-success text-xs text-white" href="#">Complete</a> </td>
+                <td><a class="btn btn-error text-xs text-white" href="{% url 'delete_task' pk=task.id %}">Delete</a> <a class="btn btn-info text-xs text-white" href="{% url 'update_task' pk=task.id %}">Edit</a> <a class="btn btn-success text-xs text-white" href="{% url 'mark_complete' pk=task.id %}">Complete</a> </td>
             </tr>
             {% endfor %}
           </tbody>

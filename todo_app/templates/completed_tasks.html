@@ -1,6 +1,42 @@
 {% extends "base.html" %}
 {% block body %}
+<h1 class="text-4xl text-green-600 font-bold my-5 text-center">Completed Tasks</h1>
 
-
+<div class="w-11/12 mx-auto">
+    {% comment %} {% if task.status %} {% endcomment %}
+    <div class="overflow-x-auto">
+        <table class="table">
+          <!-- head -->
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Title</th>
+              <th>Description</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- row 2 -->
+            {% for task in data %}
+            <tr class="hover:bg-base-300">
+                <th>{{task.id}}</th>
+                <td>{{task.title}}</td>
+                <td>{{task.description}}</td>
+                <td>
+                    {% if task.status %}
+                        <span class="text-green-600 font-bold">Complete</span>
+                    {% else %}
+                        <span class="text-red-600 font-bold">Incomplete</span>
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+    </div>
+    {% comment %} {% else %}
+    <h1 class="text-red-500 text-5xl font-bold text-center">No Tasks Completed</h1>
+    {% endif %} {% endcomment %}
+</div>
 
 {% endblock %}

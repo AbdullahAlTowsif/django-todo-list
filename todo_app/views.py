@@ -31,3 +31,21 @@ class TaskUpdateView(UpdateView):
     template_name = 'add_todo.html'
     form_class = TodoListForm
     success_url = reverse_lazy('show_tasks')
+
+class MarkTaskCompleteView(UpdateView):
+    model = TodoListModel
+    
+    def get(self, request, *args, **kwargs):
+        task = self.get_object()
+        task.status = True
+        task.save()
+        return redirect("completed_tasks")
+
+class CompletedTasksView(ListView):
+    model = TodoListModel
+    template_name = 'completed_tasks.html'
+    context_object_name = 'data'
+    
+    def get_queryset(self):
+        return TodoListModel.objects.filter(status=True)
+    

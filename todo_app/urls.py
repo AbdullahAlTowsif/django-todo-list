@@ -7,4 +7,6 @@ urlpatterns = [
     path('show_tasks/', views.TodoListView.as_view(), name="show_tasks"),
     path('delete_task/<int:pk>/', views.DeleteTodoListView.as_view(), name="delete_task"),
     path('update_task/<int:pk>/', views.TaskUpdateView.as_view(), name="update_task"),
+    path("task/<int:pk>/complete/", views.MarkTaskCompleteView.as_view(), name="mark_complete"),
+    path("completed_tasks/", views.CompletedTasksView.as_view(), name="completed_tasks"),
 ]
