@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block body %}
+<div class="w-1/2 mx-auto">
+    <h1 class="text-4xl font-bold text-green-500 my-5">Are You Sure?</h1>
+    <form method="post" action="">
+        {% csrf_token %}
+        {{form}}
+        <button class="btn btn-error">Delete</button>
+    </form>
+</div>
+{% endblock %}

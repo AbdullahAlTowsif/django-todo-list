@@ -20,3 +20,8 @@ class TodoListView(ListView):
     model = TodoListModel
     template_name = 'show_tasks.html'
     context_object_name = 'data'
+
+class DeleteTodoListView(DeleteView):
+    model = TodoListModel
+    template_name = 'delete_confirmation.html'
+    success_url = reverse_lazy('show_tasks')
