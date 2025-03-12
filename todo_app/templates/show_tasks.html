@@ -22,7 +22,13 @@
                 <th>{{task.id}}</th>
                 <td>{{task.title}}</td>
                 <td>{{task.description}}</td>
-                <td>{{task.status}}</td>
+                <td>
+                    {% if task.status %}
+                        <span class="text-green-600 font-bold">Complete</span>
+                    {% else %}
+                        <span class="text-red-600 font-bold">Incomplete</span>
+                    {% endif %}
+                </td>
                 <td><a class="btn btn-error text-xs text-white" href="{% url 'delete_task' pk=task.id %}">Delete</a> <a class="btn btn-info text-xs text-white" href="{% url 'update_task' pk=task.id %}">Edit</a> <a class="btn btn-success text-xs text-white" href="#">Complete</a> </td>
             </tr>
             {% endfor %}
