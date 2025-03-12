@@ -9,7 +9,8 @@
         <ul
           tabindex="0"
           class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-          <li><a>Add Task</a></li>
+          <li><a href="{% url 'homepage' %}">Home</a></li>
+          <li><a href="{% url 'add_task' %}">Add Task</a></li>
           <li><a>Show Tasks</a></li>
         </ul>
       </div>
@@ -17,7 +18,8 @@
     </div>
     <div class="navbar-center hidden lg:flex">
       <ul class="menu menu-horizontal px-1">
-        <li><a>Add Task</a></li>
+        <li><a href="{% url 'homepage' %}">Home</a></li>
+        <li><a href="{% url 'add_task' %}">Add Task</a></li>
         <li><a>Show Tasks</a></li>
       </ul>
     </div>
@@ -25,5 +27,5 @@
       <a class="btn">Button</a>
     </div>
 </div>
-<h1 class="text-purple-600 font-bold text-4xl my-5 text-center">TASKS</h1>
+<h1 class="text-purple-600 font-bold text-4xl my-5 text-center">WELCOME TO TODO LIST DEMO</h1>
 {% endblock %}
